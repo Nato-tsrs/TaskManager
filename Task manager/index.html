@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>TaskManagement</title>
+</head>
+<body>
+    <div class="main">
+      <div class="task">
+          <div class="inputs">
+            <input id="name" type="text" placeholder="Task name (make it unique)">
+            <textarea placeholder="Insert your task here" id="taskField" cols="30" rows="10"></textarea>
+          </div>
+          
+          <div class="buttons">
+              <button onclick="addtoLocalStorage()" id="newTask">Add new Task</button>
+              <button  onclick="clearAll()" id="clearTasks">Clear all tasks</button>
+          </div>
+        </div>
+        <div id="pool" class="pool">
+            <div id="modal" class="modal">
+              <div class="modalContent" id="content">
+                
+              </div>
+            </div>
+            <div class="result" id="result" >
+
+            </div>
+           
+        </div>
+        
+    </div>
+   <style>
+       .modal{
+ 
+  width:100%;
+  height: 100%;
+  position:fixed;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(193, 190, 190, 0.68);
+visibility: hidden;
+top:0;
+overflow: auto;
+       }
+       #name{
+       border-radius: 6px;
+       font-size: 21px;
+       color: #727273;
+       padding: 8px;
+       border:none;
+       width:80%;
+       }
+      .inputs{
+          align-items: center;
+          padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+       .modalContent{
+           position: relative;
+           margin: auto;
+           
+           background-color: white;
+           padding: 30px;
+           width:50%;
+           font-size: 28px;
+           margin:100px;
+           background-color: #e5e5f7;
+opacity: 0.8;
+background-image:  linear-gradient(#444cf7 1px, transparent 1px), linear-gradient(to right, #444cf7 1px, #e5e5f7 1px);
+background-size: 20px 20px;
+           font-family: 'Roboto', sans-serif;
+       }
+       .task{
+           display: flex;
+          
+           align-items: center;
+
+       }
+
+       body{
+           background-color: aliceblue;
+       }
+       textarea{
+           margin:50px;
+           width:400px;
+           height: 300px;
+           font-size: 23px;
+       }
+       button{
+           display: block;
+           margin-top: 30px;
+       }
+
+       .taskn{
+           margin-top: 30px;
+       }
+       .pool{
+           display: flex;
+           flex-wrap: wrap;
+           
+           justify-content: space-around;
+       }
+       .result{
+        display: flex;
+           flex-wrap: wrap;
+           
+           justify-content: space-around;
+       }
+       button{
+           width:200px;
+           height: 50px;
+           border:none;
+           color: white;
+           font-size: 24px;
+           font-family: 'Roboto', sans-serif;
+       }
+       #newTask{
+        background: linear-gradient(0deg, #FFF500, #FFF500), linear-gradient(0deg, #FAFF00, #FAFF00), linear-gradient(0deg, #FAFF00, #FAFF00), #FAFF00;
+border-radius: 13px;
+       }
+       #clearTasks{
+        background: linear-gradient(0deg, #FF2E00, #FF2E00), linear-gradient(0deg, #FAFF00, #FAFF00), linear-gradient(0deg, #FAFF00, #FAFF00), #FAFF00;
+border-radius: 13px;
+       }
+   </style>
+    <script src="./scrypt.js"></script>
+</body>
+</html>
